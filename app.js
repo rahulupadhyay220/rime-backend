@@ -7,6 +7,7 @@ import cors from "cors";
 import collegeRoute from "./src/routes/collegeRutes.js";
 import courseRoute from "./src/routes/courseRoutes.js";
 import reviewRoute from "./src/routes/reviewRoutes.js";
+import applicationRoute from "./src/routes/applicationRoute.js";
 
 const app= express();
 const PORT = process.env.PORT;
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use("/api/colleges", collegeRoute); 
 app.use("/api/courses", courseRoute); 
 app.use("/api/reviews", reviewRoute);
+app.use("/api/applications", applicationRoute);
 
 app.get("/", (req,res)=>{
     res.send("Welcome to RIME Server...");
