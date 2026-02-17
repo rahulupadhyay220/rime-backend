@@ -8,6 +8,7 @@ import reviewRoute from "./src/routes/reviewRoutes.js";
 import connectDB from "./src/config/MongoDB.js";
 import feeRoute from "./src/routes/feeRoute.js";
 import enquiryRoute from "./src/routes/enquiryRoute.js";
+import contactRoute from "./src/routes/contactRoute.js";
 
 const app= express();
 const PORT = process.env.PORT;
@@ -23,6 +24,7 @@ app.use("/api/courses", courseRoute);
 app.use("/api/reviews", reviewRoute);
 app.use("/api/course/fee", feeRoute);
 app.use("/api/enquiry", enquiryRoute);
+app.use("/api/contact", contactRoute);
 
 app.get("/", (req,res)=>{
     res.send("Welcome to RIME Server...");
