@@ -17,9 +17,12 @@ const PORT=3000
 // // Middleware
 // app.use(cors());
 // app.use(express.json());
+
 // // Routes
 // app.use("/api/users", userRoutes);
-// app.use("/api/colleges", collegeRoutes); app.use("/api/courses", courseRoutes); app.use("/api/reviews", reviewRoutes);
+// app.use("/api/colleges", collegeRoutes); 
+// app.use("/api/courses", courseRoutes); 
+// app.use("/api/reviews", reviewRoutes);
 
 
 app.listen(PORT,()=>{
