@@ -8,3 +8,14 @@ export const feeStructure = async(req,res) => {
         res.status(500).json({ error: error.message });
     }
 }
+
+export const createFee = async (req, res) => {
+    try {
+        const newFee = new feeModel(req.body);
+        const savedFee = await newFee.save();
+
+        res.status(201).json(savedFee);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
