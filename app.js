@@ -1,31 +1,31 @@
-import express from "express"
 import dotenv from "dotenv";
-import connectDB from "./config/MongoDB.js";
-// import cors from "cors";
-// import userRoutes from "./routes/userRuotes.js";
-// import collegeRoutes from "./routes/collegeRutes.js"; 
-// import courseRoutes from "./routes/courseRoutes.js"; 
-// import reviewRoutes from "./route/reviewRoute.js";
-
-
-const app= express();
 dotenv.config();
 
 
-const PORT=3000
+import express from "express"
+import cors from "cors";
+import collegeRoute from "./src/routes/collegeRutes.js";
+import courseRoute from "./src/routes/courseRoutes.js";
+import reviewRoute from "./src/routes/reviewRoutes.js";
+
+const app= express();
+const PORT = process.env.PORT;
+
 
 // // Middleware
-// app.use(cors());
-// app.use(express.json());
+app.use(cors());
+app.use(express.json());
 
 // // Routes
-// app.use("/api/users", userRoutes);
-// app.use("/api/colleges", collegeRoutes); 
-// app.use("/api/courses", courseRoutes); 
-// app.use("/api/reviews", reviewRoutes);
+app.use("/api/colleges", collegeRoute); 
+app.use("/api/courses", courseRoute); 
+app.use("/api/reviews", reviewRoute);
 
+app.get("/", (req,res)=>{
+    res.send("Welcome to RIME Server...");
+})
 
 app.listen(PORT,()=>{
-    console.log(`server in listening at PORT${PORT}`);
+    console.log(`server in listening at PORT ${PORT}`);
 
 })

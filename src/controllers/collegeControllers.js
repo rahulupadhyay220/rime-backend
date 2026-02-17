@@ -1,4 +1,4 @@
-import College from "../models/collegeController.js";
+import College from "../models/collegeModels.js";
 
 export const createCollege = async (req, res) => {
   try {
