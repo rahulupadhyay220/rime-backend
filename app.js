@@ -6,6 +6,7 @@ import cors from "cors";
 import courseRoute from "./src/routes/courseRoutes.js";
 import reviewRoute from "./src/routes/reviewRoutes.js";
 import connectDB from "./src/config/MongoDB.js";
+import feeRoute from "./src/routes/feeRoute.js";
 
 const app= express();
 const PORT = process.env.PORT;
@@ -19,6 +20,7 @@ app.use(express.json());
 // // Routes
 app.use("/api/courses", courseRoute); 
 app.use("/api/reviews", reviewRoute);
+app.use("/api/course/fee", feeRoute);
 
 app.get("/", (req,res)=>{
     res.send("Welcome to RIME Server...");
