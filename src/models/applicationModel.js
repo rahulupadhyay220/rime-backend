@@ -88,3 +88,5 @@ const applicationSchema = new mongoose.Schema({
 });
 
 const applicationModel = mongoose.models.Application || mongoose.model("Application", applicationSchema);
+
+export default applicationModel;
