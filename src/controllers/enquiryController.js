@@ -10,3 +10,12 @@ export const enquiryForm = async(req,res) => {
         res.status(500).json({ error: error.message });
     }
 }
+
+export const getEnquiry = async(req,res) => {
+    try {
+        const allEnquiry = await enquiryModel.find({});
+        res.status(200).json(allEnquiry);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
